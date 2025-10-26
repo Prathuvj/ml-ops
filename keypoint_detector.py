@@ -1,8 +1,15 @@
 import os
+import sys
+
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+os.environ['GLOG_minloglevel'] = '3'
 
 import warnings
-warnings.filterwarnings('ignore', category=UserWarning)
+warnings.filterwarnings('ignore')
+
+import logging
+logging.getLogger('tensorflow').setLevel(logging.ERROR)
+logging.getLogger('mediapipe').setLevel(logging.ERROR)
 
 import cv2
 import mediapipe as mp
