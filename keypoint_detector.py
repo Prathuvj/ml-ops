@@ -1,3 +1,9 @@
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+
+import warnings
+warnings.filterwarnings('ignore', category=UserWarning)
+
 import cv2
 import mediapipe as mp
 import numpy as np
